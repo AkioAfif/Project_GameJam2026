@@ -55,6 +55,13 @@ public class TeleportPlate : MonoBehaviour
     {
         isTeleporting = true; // Tandai bahwa sedang proses teleport
 
+        // 0. Hentikan timer saat player sampai di plate
+        Timer timer = FindAnyObjectByType<Timer>();
+        if (timer != null)
+        {
+            timer.StopTimer();
+        }
+
         // 1. Munculkan VFX
         if (teleportVfxPrefab != null)
         {
@@ -81,7 +88,13 @@ public class TeleportPlate : MonoBehaviour
         // 4. Jeda waktu tunggu (misal: 5 detik) sambil menunggu animasi/VFX selesai
         yield return new WaitForSeconds(teleportDelay);
 
-        // 5. Pindah scene
+        // 5. Simpan waktu + bonus 5 detik untuk scene berikutnya
+        if (timer != null)
+        {
+            timer.SaveTimeForNextScene(5f);
+        }
+
+        // 6. Pindah scene
         SceneManager.LoadScene(nextSceneName);
     }
 }
