@@ -29,6 +29,15 @@ public class SkillManager : MonoBehaviour
         {
             baseSpeed = playerMovement.moveSpeed;
         }
+        // Auto-find TimeFreezeEffect jika belum di-assign di Inspector
+        if (timeFreezeEffect == null)
+        {
+            timeFreezeEffect = FindAnyObjectByType<TimeFreezeEffect>();
+            if (timeFreezeEffect != null)
+                Debug.Log("[SkillManager] TimeFreezeEffect DITEMUKAN otomatis pada: " + timeFreezeEffect.gameObject.name);
+            else
+                Debug.LogWarning("[SkillManager] TimeFreezeEffect TIDAK ditemukan di scene! Tambahkan komponen TimeFreezeEffect ke salah satu GameObject.");
+        }
     }
 
     // This is the main method that Player.cs will trigger
