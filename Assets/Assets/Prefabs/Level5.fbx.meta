@@ -3,7 +3,22 @@ guid: 28906754795cc21498d9ed77703d5e84
 ModelImporter:
   serializedVersion: 24501
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetalGalvanizedSteelWorn001_2K.001
+    second: {fileID: 2100000, guid: ec7fa0ce1d2869f45b9bd304b289a676, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Poliigon_ConcreteWorn_8690_2K
+    second: {fileID: 2100000, guid: f6a7ea1404a7f7842ab7dd430bb34257, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: StoneBricksSplitface001_2K
+    second: {fileID: 2100000, guid: df7279665bc936c42b52da5e4d700eb0, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

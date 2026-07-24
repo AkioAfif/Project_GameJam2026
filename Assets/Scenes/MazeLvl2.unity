@@ -528,7 +528,7 @@ Transform:
   m_GameObject: {fileID: 416288371}
   serializedVersion: 2
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: -14.2, y: 3, z: -18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1130,7 +1130,7 @@ Transform:
   m_GameObject: {fileID: 595010330}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 474.3349, y: 210.8403, z: 0}
+  m_LocalPosition: {x: 460.1349, y: 210.8403, z: -18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1325,7 +1325,7 @@ Transform:
   m_GameObject: {fileID: 635311541}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: -0.00008136034}
-  m_LocalPosition: {x: 29.47, y: 2.325, z: 31.950003}
+  m_LocalPosition: {x: 15.2699995, y: 2.325, z: 13.950003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -1920,7 +1920,7 @@ Transform:
   m_GameObject: {fileID: 1051064222}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: -0.0000030547376}
-  m_LocalPosition: {x: 29.47, y: 1.825, z: 31.95}
+  m_LocalPosition: {x: 15.2699995, y: 1.825, z: 13.950001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -1944,6 +1944,7 @@ MonoBehaviour:
   playerMovement: {fileID: 1051064226}
   gameTimer: {fileID: 763601944}
   timeFreezeDuration: 5
+  timeFreezeEffect: {fileID: 0}
   speedBoostMultiplier: 3
   speedBoostDuration: 5
 --- !u!114 &1051064225
@@ -2372,7 +2373,7 @@ Transform:
   m_GameObject: {fileID: 1377707517}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.134, y: 1.804, z: 9.011}
+  m_LocalPosition: {x: -16.334, y: 1.804, z: -8.989}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2817,7 +2818,7 @@ Transform:
   m_GameObject: {fileID: 1617136208}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 186.82672, y: 0, z: 1323.9739}
+  m_LocalPosition: {x: 172.62672, y: 0, z: 1305.9739}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3192,7 +3193,7 @@ Transform:
   m_GameObject: {fileID: 1931764187}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -14.2, y: 0, z: -18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3601,7 +3602,7 @@ Transform:
   m_GameObject: {fileID: 462209687436956573}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -14.2, y: 0, z: -18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3698,6 +3699,8 @@ GameObject:
   - component: {fileID: 8826643444787148795}
   - component: {fileID: 6861441630200665492}
   - component: {fileID: 8179642137057637581}
+  - component: {fileID: 8826643444787148797}
+  - component: {fileID: 8826643444787148796}
   m_Layer: 0
   m_Name: Plate.002
   m_TagString: Untagged
@@ -3976,6 +3979,46 @@ Transform:
   m_Children: []
   m_Father: {fileID: 946259427707373863}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8826643444787148796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2985577052057651953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4998b2c9aa19c1e44bbf93e6425c37fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TeleportPlate
+  nextSceneName: MazeLvl3
+  teleportDelay: 2
+  teleportVfxPrefab: {fileID: 5945052716929817944, guid: 83042a092373d86429563194a6ea4856, type: 3}
+  vfxSpawnPoint: {fileID: 8826643444787148795}
+  teleportSfx: {fileID: 0}
+  playerAnimator: {fileID: 0}
+  teleportAnimationTrigger: Teleport
+--- !u!65 &8826643444787148797
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2985577052057651953}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.002, y: 0.0019999999, z: 0.00045096132}
+  m_Center: {x: 3.541846e-10, y: 9.740077e-10, z: 0.00019268238}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
