@@ -21,6 +21,10 @@ public class SkillManager : MonoBehaviour
     private float baseSpeed;
     private int activeSpeedBoosts = 0;
 
+    [Header("Skill D: Wall Pass")]
+    public float wallPassDuration = 1f;
+    public WallPassEffect wallPassEffect;
+
     private void Start()
     {
         // Automatically grab the Movement script attached to the player
@@ -51,6 +55,15 @@ public class SkillManager : MonoBehaviour
             else
                 Debug.LogWarning("[SkillManager] GoalVisibilityEffect TIDAK ditemukan di scene! Tambahkan komponen GoalVisibilityEffect ke salah satu GameObject.");
         }
+        // Auto-find WallPassEffect jika belum di-assign di Inspector
+        if (wallPassEffect == null)
+        {
+            wallPassEffect = FindAnyObjectByType<WallPassEffect>();
+            if (wallPassEffect != null)
+                Debug.Log("[SkillManager] WallPassEffect DITEMUKAN otomatis pada: " + wallPassEffect.gameObject.name);
+            else
+                Debug.LogWarning("[SkillManager] WallPassEffect TIDAK ditemukan di scene! Tambahkan komponen WallPassEffect ke salah satu GameObject.");
+        }
     }
 
     // This is the main method that Player.cs will trigger
@@ -75,6 +88,17 @@ public class SkillManager : MonoBehaviour
                 return true;
             case ItemScript.ItemType.SkillC:
                 StartCoroutine(SpeedBoostRoutine());
+                return true;
+            case ItemScript.ItemType.SkillD:
+                if (wallPassEffect != null)
+                {
+                    wallPassEffect.ActivateEffect(wallPassDuration, transform);
+                    Debug.Log("Skill D Activated: Wall Pass!");
+                }
+                else
+                {
+                    Debug.LogWarning("Skill D gagal: WallPassEffect belum di-assign!");
+                }
                 return true;
             default:
                 Debug.Log($"{skillType} is not fully implemented yet.");
