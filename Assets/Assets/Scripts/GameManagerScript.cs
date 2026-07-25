@@ -22,8 +22,8 @@ public class GameManagerScript : MonoBehaviour
     void Update()
     {
         // Deteksi tombol Escape untuk toggle Pause
-        // Tidak bisa pause jika game over sedang aktif
-        if (Input.GetKeyDown(KeyCode.Escape) && !gameOverUI.activeInHierarchy)
+        // Tidak bisa pause jika game over sedang aktif ATAU main menu masih terbuka
+        if (Input.GetKeyDown(KeyCode.Escape) && !gameOverUI.activeInHierarchy && !MainMenuScript.IsOpen)
         {
             if (isPaused)
                 ResumeGame();
@@ -31,8 +31,13 @@ public class GameManagerScript : MonoBehaviour
                 PauseGame();
         }
 
-        // Mengatur kursor: tampilkan jika game over atau pause aktif
-        if (gameOverUI.activeInHierarchy || isPaused)
+        // ── CURSOR MANAGEMENT (satu tempat, satu otoritas) ──────────────────
+        // Prioritas (tertinggi ke terendah):
+        //   1. Main Menu terbuka  → visible, bebas
+        //   2. Game Over aktif    → visible, bebas
+        //   3. Paused             → visible, bebas
+        //   4. Gameplay normal    → tersembunyi, terkunci
+        if (MainMenuScript.IsOpen || gameOverUI.activeInHierarchy || isPaused)
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
@@ -123,6 +128,6 @@ public class GameManagerScript : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
 
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Lobby");
     }
 }

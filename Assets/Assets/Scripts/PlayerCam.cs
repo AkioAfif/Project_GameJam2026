@@ -10,18 +10,29 @@ public class PlayerCam : MonoBehaviour
     float xRotation;
     float yRotation;
 
+    // Jika true, kamera tidak akan merespons input mouse
+    private bool isLocked = false;
+
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-
         Vector3 rot = transform.eulerAngles;
         xRotation = rot.x;
         yRotation = rot.y;
     }
 
+    /// <summary>
+    /// Dipanggil oleh MainMenuScript untuk memblokir atau membebaskan kamera.
+    /// </summary>
+    public void SetLocked(bool locked)
+    {
+        isLocked = locked;
+    }
+
     private void Update()
     {
+        // Jika kamera dikunci, tidak ada input mouse yang diproses
+        if (isLocked) return;
+
         float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
         float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
 

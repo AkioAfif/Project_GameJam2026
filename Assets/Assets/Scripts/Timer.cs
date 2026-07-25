@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class Timer : MonoBehaviour
@@ -19,6 +20,9 @@ public class Timer : MonoBehaviour
     // Flag untuk menghentikan timer (saat player sampai plate)
     private bool isStopped = false;
 
+    // Nama scene lobby — timer tidak berjalan di sini
+    private const string LOBBY_SCENE_NAME = "Lobby";
+
     void Start()
     {
         // Jika ada waktu tersimpan dari scene sebelumnya, gunakan itu
@@ -32,6 +36,13 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
+        // Jika berada di scene Lobby, jangan jalankan countdown.
+        // Teks yang muncul adalah apa yang kamu ketik di Unity Editor (Text Input).
+        if (SceneManager.GetActiveScene().name == LOBBY_SCENE_NAME)
+        {
+            return;
+        }
+
         // Hanya hitung mundur jika tidak frozen DAN tidak stopped
         if (!isTimeFrozen && !isStopped)
         {
