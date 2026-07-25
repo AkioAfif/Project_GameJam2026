@@ -7,6 +7,10 @@ public class SkillManager : MonoBehaviour
     public Movement playerMovement;
     public Timer gameTimer;
 
+    [Header("Skill A: Goal Visibility (X-Ray)")]
+    public float goalVisibilityDuration = 8f;
+    public GoalVisibilityEffect goalVisibilityEffect;
+
     [Header("Skill B: Time Freeze")]
     public float timeFreezeDuration = 5f;
     public TimeFreezeEffect timeFreezeEffect;
@@ -38,6 +42,15 @@ public class SkillManager : MonoBehaviour
             else
                 Debug.LogWarning("[SkillManager] TimeFreezeEffect TIDAK ditemukan di scene! Tambahkan komponen TimeFreezeEffect ke salah satu GameObject.");
         }
+        // Auto-find GoalVisibilityEffect jika belum di-assign di Inspector
+        if (goalVisibilityEffect == null)
+        {
+            goalVisibilityEffect = FindAnyObjectByType<GoalVisibilityEffect>();
+            if (goalVisibilityEffect != null)
+                Debug.Log("[SkillManager] GoalVisibilityEffect DITEMUKAN otomatis pada: " + goalVisibilityEffect.gameObject.name);
+            else
+                Debug.LogWarning("[SkillManager] GoalVisibilityEffect TIDAK ditemukan di scene! Tambahkan komponen GoalVisibilityEffect ke salah satu GameObject.");
+        }
     }
 
     // This is the main method that Player.cs will trigger
@@ -46,6 +59,17 @@ public class SkillManager : MonoBehaviour
     {
         switch (skillType)
         {
+            case ItemScript.ItemType.SkillA:
+                if (goalVisibilityEffect != null)
+                {
+                    goalVisibilityEffect.ActivateEffect(goalVisibilityDuration);
+                    Debug.Log("Skill A Activated: Goal X-Ray Vision!");
+                }
+                else
+                {
+                    Debug.LogWarning("Skill A gagal: GoalVisibilityEffect belum di-assign!");
+                }
+                return true;
             case ItemScript.ItemType.SkillB:
                 StartCoroutine(TimeFreezeRoutine());
                 return true;
