@@ -64,7 +64,12 @@ public class GameManagerScript : MonoBehaviour
         // Pastikan Time.timeScale normal sebelum restart
         Time.timeScale = 1f;
         isPaused = false;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        // Reset inventory agar tidak membawa item dari stage yang lebih jauh
+        InventoryScript.ResetSavedInventory();
+
+        // Selalu mulai ulang dari MazeLvl1
+        SceneManager.LoadScene("MazeLvl1");
     }
 
     public void MainMenu()
@@ -72,7 +77,7 @@ public class GameManagerScript : MonoBehaviour
         // Pastikan Time.timeScale normal sebelum pindah scene
         Time.timeScale = 1f;
         isPaused = false;
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Lobby");
     }
 
     public void QuitGame()

@@ -27,6 +27,26 @@ public class Player : MonoBehaviour
         return success;
     }
 
+    /// <summary>
+    /// Cek apakah inventory player penuh.
+    /// </summary>
+    public bool IsInventoryFull()
+    {
+        return inventory != null && inventory.IsFull();
+    }
+
+    /// <summary>
+    /// Simpan inventory untuk dibawa ke scene berikutnya.
+    /// Dipanggil oleh TeleportPlate sebelum LoadScene.
+    /// </summary>
+    public void SaveInventory()
+    {
+        if (inventory != null)
+        {
+            inventory.SaveForNextScene();
+        }
+    }
+
     private void Update()
     {
         KeyCode[] hotkeys = { KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4 };

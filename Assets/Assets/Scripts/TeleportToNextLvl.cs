@@ -94,6 +94,14 @@ public class TeleportPlate : MonoBehaviour
             timer.SaveTimeForNextScene(5f);
         }
 
+        // 5.5. Simpan inventory player untuk scene berikutnya
+        Player player = playerTransform.GetComponent<Player>() ?? playerTransform.GetComponentInParent<Player>();
+        if (player != null)
+        {
+            player.SaveInventory();
+            Debug.Log("[TeleportPlate] Inventory player disimpan untuk scene berikutnya.");
+        }
+
         // 6. Pindah scene
         SceneManager.LoadScene(nextSceneName);
     }

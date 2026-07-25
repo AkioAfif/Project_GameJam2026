@@ -793,8 +793,12 @@ MonoBehaviour:
   goalVisibilityEffect: {fileID: 0}
   timeFreezeDuration: 5
   timeFreezeEffect: {fileID: 0}
+  timeFreezeSfx: {fileID: 8300000, guid: 5df7aa19da65bf142853162ddbb1e2b8, type: 3}
   speedBoostMultiplier: 3
   speedBoostDuration: 5
+  speedBoostSfx: {fileID: 8300000, guid: 30ad11877ed8ab5469ff5e4b2d05dc9f, type: 3}
+  wallPassDuration: 3
+  wallPassEffect: {fileID: 0}
 --- !u!114 &1257563085
 MonoBehaviour:
   m_ObjectHideFlags: 0

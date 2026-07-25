@@ -14,19 +14,30 @@ public class SkillManager : MonoBehaviour
     [Header("Skill B: Time Freeze")]
     public float timeFreezeDuration = 5f;
     public TimeFreezeEffect timeFreezeEffect;
+    [Tooltip("Drag & Drop file audio zaowlrd ke sini")]
+    public AudioClip timeFreezeSfx;
 
     [Header("Skill C: Speed Boost")]
     public float speedBoostMultiplier = 1.5f; // e.g., 1.5 = 50% increase
     public float speedBoostDuration = 5f;
+    [Tooltip("SFX untuk efek Speed Boost")]
+    public AudioClip speedBoostSfx;
     private float baseSpeed;
     private int activeSpeedBoosts = 0;
 
     [Header("Skill D: Wall Pass")]
-    public float wallPassDuration = 1f;
+    public float wallPassDuration = 3f;
     public WallPassEffect wallPassEffect;
+
+    private AudioSource sfxSource;
 
     private void Start()
     {
+        // Setup AudioSource untuk 2D sound (agar nempel di player dan tidak 3D surround)
+        sfxSource = gameObject.AddComponent<AudioSource>();
+        sfxSource.spatialBlend = 0f; // 0 = 2D, 1 = 3D
+        sfxSource.playOnAwake = false;
+
         // Automatically grab the Movement script attached to the player
         if (playerMovement == null)
         {
@@ -113,6 +124,12 @@ public class SkillManager : MonoBehaviour
             Debug.Log("Skill B Activated: Time Frozen!");
             gameTimer.isTimeFrozen = true;
             
+            // Mainkan SFX secara 2D
+            if (timeFreezeSfx != null && sfxSource != null)
+            {
+                sfxSource.PlayOneShot(timeFreezeSfx);
+            }
+
             if (timeFreezeEffect != null)
                 timeFreezeEffect.SetEffectActive(true);
 
@@ -134,6 +151,12 @@ public class SkillManager : MonoBehaviour
         {
             activeSpeedBoosts++;
             Debug.Log($"Skill C Activated: Speed Boosted! (x{activeSpeedBoosts} stacked)");
+
+            // Mainkan SFX secara 2D
+            if (speedBoostSfx != null && sfxSource != null)
+            {
+                sfxSource.PlayOneShot(speedBoostSfx);
+            }
 
             // Apply stacked multiplier based on base speed
             playerMovement.moveSpeed = baseSpeed * Mathf.Pow(speedBoostMultiplier, activeSpeedBoosts);

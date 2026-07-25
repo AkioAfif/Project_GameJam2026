@@ -1232,10 +1232,26 @@ PrefabInstance:
       propertyPath: itemType
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 696579769922988928, guid: 8cae660f4ccc36f44a6388816b1bb337, type: 3}
+      propertyPath: collectSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 571fec582d0100a478fb520eed059d11, type: 3}
+    - target: {fileID: 696579769922988928, guid: 8cae660f4ccc36f44a6388816b1bb337, type: 3}
+      propertyPath: onCollectEffect
+      value: 
+      objectReference: {fileID: 180128, guid: 6586ff0f14125534cae2f5d8f04b7871, type: 3}
     - target: {fileID: 1775364033160093806, guid: 8cae660f4ccc36f44a6388816b1bb337, type: 3}
       propertyPath: itemType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1775364033160093806, guid: 8cae660f4ccc36f44a6388816b1bb337, type: 3}
+      propertyPath: collectSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 571fec582d0100a478fb520eed059d11, type: 3}
+    - target: {fileID: 1775364033160093806, guid: 8cae660f4ccc36f44a6388816b1bb337, type: 3}
+      propertyPath: onCollectEffect
+      value: 
+      objectReference: {fileID: 120410, guid: 6636b3078b0905e489f698a11b7a6b6b, type: 3}
     - target: {fileID: 2290312668950584633, guid: 8cae660f4ccc36f44a6388816b1bb337, type: 3}
       propertyPath: m_Name
       value: Items
@@ -1284,6 +1300,22 @@ PrefabInstance:
       propertyPath: itemType
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4344415837845887925, guid: 8cae660f4ccc36f44a6388816b1bb337, type: 3}
+      propertyPath: collectSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 571fec582d0100a478fb520eed059d11, type: 3}
+    - target: {fileID: 4344415837845887925, guid: 8cae660f4ccc36f44a6388816b1bb337, type: 3}
+      propertyPath: onCollectEffect
+      value: 
+      objectReference: {fileID: 100748, guid: cd4d7020429cde74db076ffa72495419, type: 3}
+    - target: {fileID: 8985278966071670928, guid: 8cae660f4ccc36f44a6388816b1bb337, type: 3}
+      propertyPath: collectSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 571fec582d0100a478fb520eed059d11, type: 3}
+    - target: {fileID: 8985278966071670928, guid: 8cae660f4ccc36f44a6388816b1bb337, type: 3}
+      propertyPath: onCollectEffect
+      value: 
+      objectReference: {fileID: 180128, guid: 575d0de1549937d4c93ab91a5a8d3c6f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
