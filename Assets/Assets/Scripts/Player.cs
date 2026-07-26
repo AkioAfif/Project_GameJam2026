@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -9,39 +10,74 @@ public class Player : MonoBehaviour
     private void Start()
     {
         inventory = new InventoryScript();
-        uiInventory.SetInventory(inventory);
+        if (uiInventory != null)
+        {
+            uiInventory.SetInventory(inventory);
+        }
+    }
+
+    /// <summary>
+    /// Mengambil nomor level saat ini dari nama scene (misal MazeLvl1 -> 1, MazeLvl6 -> 6)
+    /// </summary>
+    public static int GetCurrentLevel()
+    {
+        string sceneName = SceneManager.GetActiveScene().name;
+        System.Text.RegularExpressions.Match match = System.Text.RegularExpressions.Regex.Match(sceneName, @"\d+");
+        if (match.Success && int.TryParse(match.Value, out int level))
+        {
+            return level;
+        }
+        return 1; // Fallback jika tidak ditemukan angka di nama scene
     }
 
     public bool PickUpItem(ItemScript.ItemType itemType)
     {
-        // Create a new item instance with the type passed from the collectible
-        ItemScript newItem = new ItemScript { itemType = itemType, amount = 1 };
+        int currentLevel = GetCurrentLevel();
 
-        // Try to add it to the inventory backend
-        bool success = inventory.AddItem(newItem);
-        if (success)
+        // Level 1 sampai 5: PowerUp langsung terpakai secara instan (tidak masuk item bar)
+        if (currentLevel < 6)
         {
-            // Pull the Trigger! Tell the UI to instantly redraw itself
+            if (skillManager != null)
+            {
+                bool activated = skillManager.ActivateSkill(itemType);
+                Debug.Log($"[Player] Level {currentLevel}: PowerUp {itemType} langsung terpakai secara otomatis!");
+                return activated;
+            }
+            return false;
+        }
+
+        // Level 6+: PowerUp disimpan di Item Bar
+        if (currentLevel == 6 && uiInventory != null)
+        {
+            uiInventory.CheckAndShowLevel6Tutorial();
+        }
+
+        ItemScript newItem = new ItemScript { itemType = itemType, amount = 1 };
+        bool success = inventory.AddItem(newItem);
+        if (success && uiInventory != null)
+        {
             uiInventory.RefreshInventoryItems();
         }
         return success;
     }
 
     /// <summary>
-    /// Cek apakah inventory player penuh.
+    /// Cek apakah inventory player penuh (hanya berlaku di level 6 ke atas)
     /// </summary>
     public bool IsInventoryFull()
     {
+        // Level 1 sampai 5 tidak menggunakan tempat penyimpanan inventory
+        if (GetCurrentLevel() < 6) return false;
+
         return inventory != null && inventory.IsFull();
     }
 
     /// <summary>
-    /// Simpan inventory untuk dibawa ke scene berikutnya.
-    /// Dipanggil oleh TeleportPlate sebelum LoadScene.
+    /// Simpan inventory untuk dibawa ke scene berikutnya (hanya berlaku di level 6 ke atas)
     /// </summary>
     public void SaveInventory()
     {
-        if (inventory != null)
+        if (inventory != null && GetCurrentLevel() >= 6)
         {
             inventory.SaveForNextScene();
         }
@@ -49,6 +85,9 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        // Hotkey 1-4 hanya aktif jika berada di level 6 ke atas
+        if (GetCurrentLevel() < 6) return;
+
         KeyCode[] hotkeys = { KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4 };
         ItemScript[] items = inventory.GetItemList();
 
@@ -56,11 +95,14 @@ public class Player : MonoBehaviour
         {
             if (Input.GetKeyDown(hotkeys[i]) && items[i] != null)
             {
-                // Only consume the item if the skill was successfully activated
+                // Consume item jika skill berhasil diaktifkan
                 if (skillManager.ActivateSkill(items[i].itemType))
                 {
                     items[i] = null;
-                    uiInventory.RefreshInventoryItems();
+                    if (uiInventory != null)
+                    {
+                        uiInventory.RefreshInventoryItems();
+                    }
                 }
                 break;
             }

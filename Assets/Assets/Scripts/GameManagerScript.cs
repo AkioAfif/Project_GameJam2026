@@ -36,8 +36,9 @@ public class GameManagerScript : MonoBehaviour
         //   1. Main Menu terbuka  → visible, bebas
         //   2. Game Over aktif    → visible, bebas
         //   3. Paused             → visible, bebas
-        //   4. Gameplay normal    → tersembunyi, terkunci
-        if (MainMenuScript.IsOpen || gameOverUI.activeInHierarchy || isPaused)
+        //   4. Tutorial Level 6   → visible, bebas
+        //   5. Gameplay normal    → tersembunyi, terkunci
+        if (MainMenuScript.IsOpen || gameOverUI.activeInHierarchy || isPaused || UI_Inventory.IsTutorialActive)
         {
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
@@ -65,8 +66,9 @@ public class GameManagerScript : MonoBehaviour
         Time.timeScale = 1f;
         isPaused = false;
 
-        // Reset inventory agar tidak membawa item dari stage yang lebih jauh
+        // Reset inventory dan tutorial state agar mulai segar
         InventoryScript.ResetSavedInventory();
+        UI_Inventory.ResetTutorialState();
 
         // Selalu mulai ulang dari MazeLvl1
         SceneManager.LoadScene("MazeLvl1");
