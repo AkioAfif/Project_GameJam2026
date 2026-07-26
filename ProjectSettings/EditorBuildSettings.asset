@@ -15,8 +15,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Lvl1.unity
     guid: a82fd54d64173b54e8333f3a000183b9
   - enabled: 1
-    path: Assets/Scenes/Lvl10.unity
-    guid: 4d420c2a9a91d10448684701d4b0f867
+    path: Assets/Scenes/Lvl2.unity
+    guid: a6591a7c49b402e41bd04b9e6d730bad
   - enabled: 1
     path: Assets/Scenes/Lvl3.unity
     guid: 0f9f456bc6031e14db04670524bc0c4d
@@ -29,6 +29,33 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lvl6.unity
     guid: 637408458e6b46d43a93025812707330
+  - enabled: 1
+    path: Assets/Scenes/Lvl7.unity
+    guid: 4e39cf59a094809488d0bf27d4ef0749
+  - enabled: 1
+    path: Assets/Scenes/Lvl8.unity
+    guid: 11d5a84bf95b5e948af911f9743254c3
+  - enabled: 1
+    path: Assets/Scenes/Lvl9.unity
+    guid: 15591434c30599c42b4fdfea8be42fbf
+  - enabled: 1
+    path: Assets/Scenes/Lvl10.unity
+    guid: 4d420c2a9a91d10448684701d4b0f867
+  - enabled: 1
+    path: Assets/Scenes/Lvl11.unity
+    guid: d5eb4cd3b678bbe4092a3a6046823ddb
+  - enabled: 1
+    path: Assets/Scenes/Lvl12.unity
+    guid: da85b3a46a8d5844a9164d44d94568a0
+  - enabled: 1
+    path: Assets/Scenes/Lvl13.unity
+    guid: 3a47d500532dda64e891ae62774998e9
+  - enabled: 1
+    path: Assets/Scenes/Lvl14.unity
+    guid: 46d30419ee86bcb4b9615c9fc836d452
+  - enabled: 1
+    path: Assets/Scenes/Lvl15.unity
+    guid: 66e46b040e04bfd43afa27363018452b
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
