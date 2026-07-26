@@ -207,6 +207,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 977.993
       objectReference: {fileID: 0}
+    - target: {fileID: 5183051987328402143, guid: bb2fe2668b51fd64297a7c27af3d3cb0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5183051987328402143, guid: bb2fe2668b51fd64297a7c27af3d3cb0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.28
+      objectReference: {fileID: 0}
     - target: {fileID: 5882822420682113744, guid: bb2fe2668b51fd64297a7c27af3d3cb0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -188.09001
@@ -240,7 +248,10 @@ PrefabInstance:
       value: AsetPenting
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 447727940708583937, guid: bb2fe2668b51fd64297a7c27af3d3cb0, type: 3}
+    - {fileID: 3892831406018115086, guid: bb2fe2668b51fd64297a7c27af3d3cb0, type: 3}
+    - {fileID: 3532296119373639823, guid: bb2fe2668b51fd64297a7c27af3d3cb0, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb2fe2668b51fd64297a7c27af3d3cb0, type: 3}

@@ -1468,6 +1468,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 775951172238620080, guid: 3b064aad5e26c6045b472adb8d786ea8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 775951172238620080, guid: 3b064aad5e26c6045b472adb8d786ea8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 3605820636331680150, guid: 3b064aad5e26c6045b472adb8d786ea8, type: 3}
       propertyPath: m_Name
       value: AsetPenting
@@ -1528,8 +1536,25 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -3.22
       objectReference: {fileID: 0}
+    - target: {fileID: 8656006041097593839, guid: 3b064aad5e26c6045b472adb8d786ea8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 8656006041097593839, guid: 3b064aad5e26c6045b472adb8d786ea8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 9154910257401767503, guid: 3b064aad5e26c6045b472adb8d786ea8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9154910257401767503, guid: 3b064aad5e26c6045b472adb8d786ea8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.67
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 795780364590014882, guid: 3b064aad5e26c6045b472adb8d786ea8, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b064aad5e26c6045b472adb8d786ea8, type: 3}
