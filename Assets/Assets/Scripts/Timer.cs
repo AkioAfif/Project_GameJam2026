@@ -45,6 +45,7 @@ public class Timer : MonoBehaviour
             case 13: return 45f;
             case 14: return 45f;
             case 15: return 60f; // 1 menit
+            case 16: return 20f; // Ending scene / Level 16 (20 detik)
             default: return 5f;
         }
     }

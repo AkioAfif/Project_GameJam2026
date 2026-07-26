@@ -22,6 +22,10 @@ public class Player : MonoBehaviour
     public static int GetLevelFromSceneName(string sceneName)
     {
         if (string.IsNullOrEmpty(sceneName)) return 1;
+        
+        // Deteksi jika scene bernamanya "Ending", "EndScene", "MazeLvl16", dll.
+        if (sceneName.ToLower().Contains("end") || sceneName.ToLower().Contains("ending")) return 16;
+
         System.Text.RegularExpressions.Match match = System.Text.RegularExpressions.Regex.Match(sceneName, @"\d+");
         if (match.Success && int.TryParse(match.Value, out int level))
         {
