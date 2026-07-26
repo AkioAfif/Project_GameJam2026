@@ -1370,7 +1370,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2348695339608138367, guid: 8cae660f4ccc36f44a6388816b1bb337, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.33
+      value: 17.09
       objectReference: {fileID: 0}
     - target: {fileID: 2348695339608138367, guid: 8cae660f4ccc36f44a6388816b1bb337, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1378,7 +1378,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2348695339608138367, guid: 8cae660f4ccc36f44a6388816b1bb337, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.93
+      value: 10.67
       objectReference: {fileID: 0}
     - target: {fileID: 2348695339608138367, guid: 8cae660f4ccc36f44a6388816b1bb337, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2497,7 +2497,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1335049032997045541, guid: eadab4bdbe317cd4bad6ad0e78d3df4a, type: 3}
       propertyPath: remainingTime
-      value: 10
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 2202183457726531841, guid: eadab4bdbe317cd4bad6ad0e78d3df4a, type: 3}
       propertyPath: m_fontAsset
@@ -2680,7 +2680,7 @@ MonoBehaviour:
   glowIntensity: 2.5
   pulseSpeed: 2
   xrayTargets:
-  - {fileID: 0}
+  - {fileID: 2136759538}
 --- !u!1 &1915449072
 GameObject:
   m_ObjectHideFlags: 0
