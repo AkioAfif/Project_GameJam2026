@@ -88,10 +88,13 @@ public class TeleportPlate : MonoBehaviour
         // 4. Jeda waktu tunggu (misal: 5 detik) sambil menunggu animasi/VFX selesai
         yield return new WaitForSeconds(teleportDelay);
 
-        // 5. Simpan waktu + bonus 5 detik untuk scene berikutnya
+        // 5. Simpan waktu + bonus detik sesuai level berikutnya
         if (timer != null)
         {
-            timer.SaveTimeForNextScene(5f);
+            int nextLevel = Player.GetLevelFromSceneName(nextSceneName);
+            float bonusTime = Timer.GetTimeBonusForLevel(nextLevel);
+            timer.SaveTimeForNextScene(bonusTime);
+            Debug.Log($"[TeleportPlate] Pindah ke Level {nextLevel} ({nextSceneName}): Tambah {bonusTime}s bonus waktu.");
         }
 
         // 5.5. Simpan inventory player untuk scene berikutnya

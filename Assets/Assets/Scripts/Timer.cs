@@ -23,6 +23,32 @@ public class Timer : MonoBehaviour
     // Nama scene lobby — timer tidak berjalan di sini
     private const string LOBBY_SCENE_NAME = "Lobby";
 
+    /// <summary>
+    /// Mendapatkan bonus tambahan waktu (detik) sesuai target level
+    /// </summary>
+    public static float GetTimeBonusForLevel(int level)
+    {
+        switch (level)
+        {
+            case 1: return 5f;
+            case 2: return 5f;
+            case 3: return 5f;
+            case 4: return 5f;
+            case 5: return 5f;
+            case 6: return 5f;
+            case 7: return 30f;
+            case 8: return 30f;
+            case 9: return 30f;
+            case 10: return 30f;
+            case 11: return 30f;
+            case 12: return 30f;
+            case 13: return 45f;
+            case 14: return 45f;
+            case 15: return 60f; // 1 menit
+            default: return 5f;
+        }
+    }
+
     void Start()
     {
         // Jika ada waktu tersimpan dari scene sebelumnya, gunakan itu
@@ -31,6 +57,16 @@ public class Timer : MonoBehaviour
             remainingTime = savedRemainingTime;
             savedRemainingTime = -1f; // Reset agar hanya dipakai sekali
             Debug.Log("[Timer] Melanjutkan waktu dari scene sebelumnya: " + remainingTime);
+        }
+        else
+        {
+            // Jika mulai baru dari Level 1 (misal dari awal game/restart)
+            int currentLevel = Player.GetCurrentLevel();
+            if (currentLevel == 1)
+            {
+                remainingTime = GetTimeBonusForLevel(1); // 5 detik
+                Debug.Log("[Timer] Level 1 Waktu Awal: " + remainingTime + " detik.");
+            }
         }
     }
 

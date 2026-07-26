@@ -17,17 +17,25 @@ public class Player : MonoBehaviour
     }
 
     /// <summary>
-    /// Mengambil nomor level saat ini dari nama scene (misal MazeLvl1 -> 1, MazeLvl6 -> 6)
+    /// Mengambil nomor level dari nama scene (misal MazeLvl1 -> 1, MazeLvl6 -> 6, Level 15 -> 15)
     /// </summary>
-    public static int GetCurrentLevel()
+    public static int GetLevelFromSceneName(string sceneName)
     {
-        string sceneName = SceneManager.GetActiveScene().name;
+        if (string.IsNullOrEmpty(sceneName)) return 1;
         System.Text.RegularExpressions.Match match = System.Text.RegularExpressions.Regex.Match(sceneName, @"\d+");
         if (match.Success && int.TryParse(match.Value, out int level))
         {
             return level;
         }
         return 1; // Fallback jika tidak ditemukan angka di nama scene
+    }
+
+    /// <summary>
+    /// Mengambil nomor level saat ini dari scene yang sedang aktif
+    /// </summary>
+    public static int GetCurrentLevel()
+    {
+        return GetLevelFromSceneName(SceneManager.GetActiveScene().name);
     }
 
     public bool PickUpItem(ItemScript.ItemType itemType)
