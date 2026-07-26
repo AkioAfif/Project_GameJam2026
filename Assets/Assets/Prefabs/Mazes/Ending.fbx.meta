@@ -7,6 +7,16 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: BarkPoplar001_2K
+    second: {fileID: 2100000, guid: 2761b4ff41fef9c46b445d2b70087332, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 3dc8b640a380a274c9d39016621cf78e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Poliigon_ConcreteWorn_8690_2K
     second: {fileID: 2100000, guid: f6a7ea1404a7f7842ab7dd430bb34257, type: 2}
   - first:
@@ -14,6 +24,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Poliigon_MetalGoldPaint_7253_2K
     second: {fileID: 2100000, guid: 90ad31ed491264149962536f1e3ba184, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Poliigon_PlasticMoldDryBlast_7495_2K
+    second: {fileID: 2100000, guid: 2466d9428682fcf40aa1ad493660d910, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
