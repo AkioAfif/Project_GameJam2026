@@ -107,15 +107,6 @@ public class UI_Inventory : MonoBehaviour
         Debug.Log("[UI_Inventory] Tutorial Level 6 Ditutup - Game Resumed.");
     }
 
-    private void Update()
-    {
-        // Tutup tutorial jika menekan Space, Enter, atau Escape saat tutorial aktif
-        if (IsTutorialActive && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Escape)))
-        {
-            CloseLevel6Tutorial();
-        }
-    }
-
     private void CreateDefaultTutorialPanel()
     {
         // Buat overlay hitam transparan
@@ -135,7 +126,7 @@ public class UI_Inventory : MonoBehaviour
         GameObject cardObj = new GameObject("Card", typeof(RectTransform), typeof(CanvasRenderer), typeof(Image));
         cardObj.transform.SetParent(panelObj.transform, false);
         RectTransform cardRect = cardObj.GetComponent<RectTransform>();
-        cardRect.sizeDelta = new Vector2(520f, 320f);
+        cardRect.sizeDelta = new Vector2(540f, 320f);
         Image cardImg = cardObj.GetComponent<Image>();
         cardImg.color = new Color(0.12f, 0.14f, 0.2f, 0.98f);
 
@@ -144,7 +135,7 @@ public class UI_Inventory : MonoBehaviour
         titleObj.transform.SetParent(cardObj.transform, false);
         RectTransform titleRect = titleObj.GetComponent<RectTransform>();
         titleRect.anchoredPosition = new Vector2(0f, 100f);
-        titleRect.sizeDelta = new Vector2(480f, 50f);
+        titleRect.sizeDelta = new Vector2(500f, 50f);
         TextMeshProUGUI titleText = titleObj.GetComponent<TextMeshProUGUI>();
         titleText.text = "FITUR BARU: ITEM BAR!";
         titleText.fontSize = 26;
@@ -156,36 +147,33 @@ public class UI_Inventory : MonoBehaviour
         GameObject bodyObj = new GameObject("Body", typeof(RectTransform), typeof(CanvasRenderer), typeof(TextMeshProUGUI));
         bodyObj.transform.SetParent(cardObj.transform, false);
         RectTransform bodyRect = bodyObj.GetComponent<RectTransform>();
-        bodyRect.anchoredPosition = new Vector2(0f, 15f);
-        bodyRect.sizeDelta = new Vector2(460f, 130f);
+        bodyRect.anchoredPosition = new Vector2(0f, 20f);
+        bodyRect.sizeDelta = new Vector2(480f, 130f);
         TextMeshProUGUI bodyText = bodyObj.GetComponent<TextMeshProUGUI>();
-        bodyText.text = "Mulai Level 6, PowerUp yang kamu ambil akan disimpan di Item Bar (maksimal 4 item).\n\nTekan tombol 1, 2, 3, atau 4 pada keyboard untuk mengaktifkan PowerUp yang tersimpan!";
+        bodyText.text = "Mulai Level 6, PowerUp yang kamu ambil akan disimpan di Item Bar (maksimal 4 item).\n\nTekan tombol 1, 2, 3, atau 4 pada keyboard untuk MENGGUNAKAN SKILL dan melanjutkan permainan!";
         bodyText.fontSize = 18;
         bodyText.alignment = TextAlignmentOptions.Center;
         bodyText.color = Color.white;
 
-        // Tombol Lanjutkan
-        GameObject btnObj = new GameObject("OKButton", typeof(RectTransform), typeof(CanvasRenderer), typeof(Image), typeof(Button));
-        btnObj.transform.SetParent(cardObj.transform, false);
-        RectTransform btnRect = btnObj.GetComponent<RectTransform>();
-        btnRect.anchoredPosition = new Vector2(0f, -100f);
-        btnRect.sizeDelta = new Vector2(180f, 48f);
-        Image btnImg = btnObj.GetComponent<Image>();
-        btnImg.color = new Color(0.2f, 0.6f, 1f);
+        // Hint Box di Bawah
+        GameObject hintObj = new GameObject("HintBox", typeof(RectTransform), typeof(CanvasRenderer), typeof(Image));
+        hintObj.transform.SetParent(cardObj.transform, false);
+        RectTransform hintRect = hintObj.GetComponent<RectTransform>();
+        hintRect.anchoredPosition = new Vector2(0f, -95f);
+        hintRect.sizeDelta = new Vector2(440f, 44f);
+        Image hintImg = hintObj.GetComponent<Image>();
+        hintImg.color = new Color(0.2f, 0.6f, 1f, 0.3f);
 
-        GameObject btnTextObj = new GameObject("BtnText", typeof(RectTransform), typeof(CanvasRenderer), typeof(TextMeshProUGUI));
-        btnTextObj.transform.SetParent(btnObj.transform, false);
-        RectTransform btnTextRect = btnTextObj.GetComponent<RectTransform>();
-        btnTextRect.sizeDelta = btnRect.sizeDelta;
-        TextMeshProUGUI btnText = btnTextObj.GetComponent<TextMeshProUGUI>();
-        btnText.text = "Lanjutkan";
-        btnText.fontSize = 20;
-        btnText.fontStyle = FontStyles.Bold;
-        btnText.alignment = TextAlignmentOptions.Center;
-        btnText.color = Color.white;
-
-        Button btn = btnObj.GetComponent<Button>();
-        btn.onClick.AddListener(CloseLevel6Tutorial);
+        GameObject hintTextObj = new GameObject("HintText", typeof(RectTransform), typeof(CanvasRenderer), typeof(TextMeshProUGUI));
+        hintTextObj.transform.SetParent(hintObj.transform, false);
+        RectTransform hintTextRect = hintTextObj.GetComponent<RectTransform>();
+        hintTextRect.sizeDelta = hintRect.sizeDelta;
+        TextMeshProUGUI hintText = hintTextObj.GetComponent<TextMeshProUGUI>();
+        hintText.text = "👉 Tekan [ 1 - 4 ] Untuk Menggunakan Skill";
+        hintText.fontSize = 18;
+        hintText.fontStyle = FontStyles.Bold;
+        hintText.alignment = TextAlignmentOptions.Center;
+        hintText.color = Color.yellow;
 
         tutorialPanel = panelObj;
     }

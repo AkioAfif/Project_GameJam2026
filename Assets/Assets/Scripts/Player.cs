@@ -95,6 +95,12 @@ public class Player : MonoBehaviour
         {
             if (Input.GetKeyDown(hotkeys[i]) && items[i] != null)
             {
+                // Jika tutorial sedang aktif, tutup tutorial terlebih dahulu agar game unpause (timeScale = 1)
+                if (UI_Inventory.IsTutorialActive && uiInventory != null)
+                {
+                    uiInventory.CloseLevel6Tutorial();
+                }
+
                 // Consume item jika skill berhasil diaktifkan
                 if (skillManager.ActivateSkill(items[i].itemType))
                 {
