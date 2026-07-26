@@ -71,7 +71,7 @@ public class GameManagerScript : MonoBehaviour
         UI_Inventory.ResetTutorialState();
 
         // Selalu mulai ulang dari MazeLvl1
-        SceneManager.LoadScene("MazeLvl1");
+        SceneManager.LoadScene("Lvl1");
     }
 
     public void MainMenu()

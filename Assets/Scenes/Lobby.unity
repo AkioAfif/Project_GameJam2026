@@ -3962,7 +3962,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Timer
   timerText: {fileID: 418579865}
-  remainingTime: 3
+  remainingTime: 120
   gameManager: {fileID: 1421344405}
   isTimeFrozen: 0
 --- !u!1 &2046634047
@@ -5077,7 +5077,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4998b2c9aa19c1e44bbf93e6425c37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TeleportPlate
-  nextSceneName: Lvl1
+  nextSceneName: Lvl5
   teleportDelay: 1
   teleportVfxPrefab: {fileID: 5945052716929817944, guid: 83042a092373d86429563194a6ea4856, type: 3}
   vfxSpawnPoint: {fileID: 6955985664455675562}
