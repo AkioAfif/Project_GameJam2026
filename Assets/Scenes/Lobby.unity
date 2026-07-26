@@ -3235,6 +3235,53 @@ Transform:
   - {fileID: 307536250}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 409.432, z: 0}
+--- !u!1 &1461576185
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1461576187}
+  - component: {fileID: 1461576186}
+  m_Layer: 0
+  m_Name: BacksoundMusic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1461576186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461576185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 135e2e7cb9de99a40b230277f867e36e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BackgroundSound
+  backgroundMusic: {fileID: 8300000, guid: 1562c61b90da2f740853e3b85e821a86, type: 3}
+  volume: 0.5
+  loop: 1
+--- !u!4 &1461576187
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461576185}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.79736, y: 0, z: -6.24338}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1477045610
 GameObject:
   m_ObjectHideFlags: 0
@@ -5632,3 +5679,4 @@ SceneRoots:
   - {fileID: 1433860799}
   - {fileID: 552970976}
   - {fileID: 1878039860}
+  - {fileID: 1461576187}
