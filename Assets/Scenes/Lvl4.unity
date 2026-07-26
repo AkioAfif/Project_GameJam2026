@@ -692,6 +692,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 807.589
       objectReference: {fileID: 0}
+    - target: {fileID: 4554314002220061834, guid: bb2fe2668b51fd64297a7c27af3d3cb0, type: 3}
+      propertyPath: 'xrayTargets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1803347695}
     - target: {fileID: 6184443847491301267, guid: bb2fe2668b51fd64297a7c27af3d3cb0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -188.21

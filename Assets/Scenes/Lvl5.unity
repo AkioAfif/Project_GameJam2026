@@ -127,6 +127,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2156168944554715154, guid: bb2fe2668b51fd64297a7c27af3d3cb0, type: 3}
+      propertyPath: wallPassDuration
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2664265983180403714, guid: bb2fe2668b51fd64297a7c27af3d3cb0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -186.71
@@ -247,6 +251,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AsetPenting
       objectReference: {fileID: 0}
+    - target: {fileID: 6957125926311134777, guid: bb2fe2668b51fd64297a7c27af3d3cb0, type: 3}
+      propertyPath: 'passableWalls.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1318235886}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 447727940708583937, guid: bb2fe2668b51fd64297a7c27af3d3cb0, type: 3}
