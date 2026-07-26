@@ -51,13 +51,7 @@ public class EndingItem : MonoBehaviour
 
     private void Start()
     {
-        // Matikan timer di stage ini
-        Timer timer = FindAnyObjectByType<Timer>();
-        if (timer != null)
-        {
-            timer.StopTimer();
-            Debug.Log("[EndingItem] Timer dimatikan untuk stage ending.");
-        }
+        // Timer tetap berjalan normal di stage ini
     }
 
     void Update()

@@ -653,7 +653,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CollectibleItem
   rotationalSpeed: 50
   onCollectEffect: {fileID: 180128, guid: 6586ff0f14125534cae2f5d8f04b7871, type: 3}
-  collectSound: {fileID: 8300000, guid: b05cc43731499294b84ef9e9718e2a4c, type: 3}
+  collectSound: {fileID: 8300000, guid: a90171751a1eb7b4e905cdd9d810a3d3, type: 3}
   itemType: 2
 --- !u!65 &819407107
 BoxCollider:

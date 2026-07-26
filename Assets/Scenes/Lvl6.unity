@@ -1661,9 +1661,17 @@ PrefabInstance:
       value: -1.94
       objectReference: {fileID: 0}
     - target: {fileID: 696579769922988928, guid: 8cae660f4ccc36f44a6388816b1bb337, type: 3}
+      propertyPath: collectSound
+      value: 
+      objectReference: {fileID: 8300000, guid: a90171751a1eb7b4e905cdd9d810a3d3, type: 3}
+    - target: {fileID: 696579769922988928, guid: 8cae660f4ccc36f44a6388816b1bb337, type: 3}
       propertyPath: onCollectEffect
       value: 
       objectReference: {fileID: 180128, guid: 6586ff0f14125534cae2f5d8f04b7871, type: 3}
+    - target: {fileID: 1775364033160093806, guid: 8cae660f4ccc36f44a6388816b1bb337, type: 3}
+      propertyPath: collectSound
+      value: 
+      objectReference: {fileID: 8300000, guid: a90171751a1eb7b4e905cdd9d810a3d3, type: 3}
     - target: {fileID: 1775364033160093806, guid: 8cae660f4ccc36f44a6388816b1bb337, type: 3}
       propertyPath: onCollectEffect
       value: 
@@ -2071,10 +2079,10 @@ MonoBehaviour:
   goalVisibilitySfx: {fileID: 0}
   timeFreezeDuration: 5
   timeFreezeEffect: {fileID: 0}
-  timeFreezeSfx: {fileID: 8300000, guid: 5df7aa19da65bf142853162ddbb1e2b8, type: 3}
-  speedBoostMultiplier: 3
+  timeFreezeSfx: {fileID: 8300000, guid: 78c71cd0197c34d459ecd07b9f9ee643, type: 3}
+  speedBoostMultiplier: 1.7
   speedBoostDuration: 5
-  speedBoostSfx: {fileID: 8300000, guid: 30ad11877ed8ab5469ff5e4b2d05dc9f, type: 3}
+  speedBoostSfx: {fileID: 8300000, guid: 510d8aa31f71d3d44ad28b797b8aad5f, type: 3}
   wallPassDuration: 3
   wallPassEffect: {fileID: 0}
   wallPassSfx: {fileID: 0}
