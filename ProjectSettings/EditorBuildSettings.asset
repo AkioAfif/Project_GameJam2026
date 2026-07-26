@@ -12,22 +12,22 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 8e486cbfed06df84aaa2b07de374cc6b
   - enabled: 1
-    path: Assets/Scenes/MazeLvl1.unity
+    path: Assets/Scenes/Lvl1.unity
     guid: a82fd54d64173b54e8333f3a000183b9
   - enabled: 1
-    path: Assets/Scenes/MazeLvl2.unity
+    path: Assets/Scenes/Lvl10.unity
     guid: 4d420c2a9a91d10448684701d4b0f867
   - enabled: 1
-    path: Assets/Scenes/MazeLvl3.unity
+    path: Assets/Scenes/Lvl3.unity
     guid: 0f9f456bc6031e14db04670524bc0c4d
   - enabled: 1
-    path: Assets/Scenes/MazeLvl4.unity
+    path: Assets/Scenes/Lvl4.unity
     guid: 978bb6622d9e0b745955a518575e640a
   - enabled: 1
-    path: Assets/Scenes/MazeLvl5.unity
+    path: Assets/Scenes/Lvl5.unity
     guid: aa2b57589e8c6124e9168d570ad83169
   - enabled: 1
-    path: Assets/Scenes/MazeLvl6.unity
+    path: Assets/Scenes/Lvl6.unity
     guid: 637408458e6b46d43a93025812707330
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f, type: 2}

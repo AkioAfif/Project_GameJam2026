@@ -849,7 +849,7 @@ Camera:
   m_GameObject: {fileID: 307536249}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -5077,8 +5077,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4998b2c9aa19c1e44bbf93e6425c37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TeleportPlate
-  nextSceneName: MazeLvl1
-  teleportDelay: 2
+  nextSceneName: Lvl1
+  teleportDelay: 1
   teleportVfxPrefab: {fileID: 5945052716929817944, guid: 83042a092373d86429563194a6ea4856, type: 3}
   vfxSpawnPoint: {fileID: 6955985664455675562}
   teleportSfx: {fileID: 0}
