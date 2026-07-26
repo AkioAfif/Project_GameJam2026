@@ -21,6 +21,14 @@ public class Movement : MonoBehaviour
 
     [SerializeField] private Transform orientation;
 
+    [Header("Footstep SFX")]
+    [Tooltip("Drag & Drop file suara langkah kaki ke sini")]
+    [SerializeField] private AudioClip footstepClip;
+    [Tooltip("Jarak waktu antar langkah (dalam detik)")]
+    [SerializeField] private float footstepInterval = 0.4f;
+    private AudioSource footstepSource;
+    private float footstepTimer;
+
     float horizontalInput;
     float verticalInput;
     Vector3 moveDirection;
@@ -31,6 +39,12 @@ public class Movement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         readyToJump = true;
+
+        // Setup AudioSource untuk footstep (2D agar nempel di player)
+        footstepSource = gameObject.AddComponent<AudioSource>();
+        footstepSource.spatialBlend = 0f; // 2D sound
+        footstepSource.playOnAwake = false;
+        footstepSource.loop = false;
 
         // Apply zero-friction physic material to prevent sticking to walls
         Collider col = GetComponent<Collider>();
@@ -58,6 +72,31 @@ public class Movement : MonoBehaviour
             rb.linearDamping = groundDrag;
         else
             rb.linearDamping = 0;
+
+        // Footstep SFX: hanya berbunyi saat grounded DAN sedang bergerak
+        HandleFootsteps();
+    }
+
+    private void HandleFootsteps()
+    {
+        if (footstepClip == null || footstepSource == null) return;
+
+        bool isMoving = (horizontalInput != 0f || verticalInput != 0f);
+
+        if (grounded && isMoving)
+        {
+            footstepTimer -= Time.deltaTime;
+            if (footstepTimer <= 0f)
+            {
+                footstepSource.PlayOneShot(footstepClip);
+                footstepTimer = footstepInterval;
+            }
+        }
+        else
+        {
+            // Reset timer agar langkah pertama langsung terdengar saat mulai jalan lagi
+            footstepTimer = 0f;
+        }
     }
 
     private void FixedUpdate()

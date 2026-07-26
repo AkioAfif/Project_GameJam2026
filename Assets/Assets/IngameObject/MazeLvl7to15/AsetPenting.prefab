@@ -443,6 +443,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   orientation: {fileID: 2154551104291752054}
+  footstepClip: {fileID: 8300000, guid: 714abe7fd1216fe42983dcabfef876dd, type: 3}
+  footstepInterval: 0.4
 --- !u!114 &5391118725079794202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -473,14 +475,16 @@ MonoBehaviour:
   gameTimer: {fileID: 2231103055558837240}
   goalVisibilityDuration: 8
   goalVisibilityEffect: {fileID: 0}
+  goalVisibilitySfx: {fileID: 8300000, guid: c5c1a28579b71034d97a8b0f52af7954, type: 3}
   timeFreezeDuration: 5
   timeFreezeEffect: {fileID: 0}
   timeFreezeSfx: {fileID: 8300000, guid: 5df7aa19da65bf142853162ddbb1e2b8, type: 3}
   speedBoostMultiplier: 3
   speedBoostDuration: 5
   speedBoostSfx: {fileID: 8300000, guid: 30ad11877ed8ab5469ff5e4b2d05dc9f, type: 3}
-  wallPassDuration: 1
+  wallPassDuration: 10
   wallPassEffect: {fileID: 0}
+  wallPassSfx: {fileID: 8300000, guid: 1362d9c23c7baaf458d963d2a1dec865, type: 3}
 --- !u!1 &7202900977942694847
 GameObject:
   m_ObjectHideFlags: 0
@@ -1073,7 +1077,7 @@ PrefabInstance:
     - target: {fileID: 696579769922988928, guid: 8cae660f4ccc36f44a6388816b1bb337, type: 3}
       propertyPath: collectSound
       value: 
-      objectReference: {fileID: 8300000, guid: 571fec582d0100a478fb520eed059d11, type: 3}
+      objectReference: {fileID: 8300000, guid: b05cc43731499294b84ef9e9718e2a4c, type: 3}
     - target: {fileID: 696579769922988928, guid: 8cae660f4ccc36f44a6388816b1bb337, type: 3}
       propertyPath: onCollectEffect
       value: 
@@ -1081,7 +1085,7 @@ PrefabInstance:
     - target: {fileID: 1775364033160093806, guid: 8cae660f4ccc36f44a6388816b1bb337, type: 3}
       propertyPath: collectSound
       value: 
-      objectReference: {fileID: 8300000, guid: 571fec582d0100a478fb520eed059d11, type: 3}
+      objectReference: {fileID: 8300000, guid: b05cc43731499294b84ef9e9718e2a4c, type: 3}
     - target: {fileID: 1775364033160093806, guid: 8cae660f4ccc36f44a6388816b1bb337, type: 3}
       propertyPath: onCollectEffect
       value: 
@@ -1133,7 +1137,7 @@ PrefabInstance:
     - target: {fileID: 4344415837845887925, guid: 8cae660f4ccc36f44a6388816b1bb337, type: 3}
       propertyPath: collectSound
       value: 
-      objectReference: {fileID: 8300000, guid: 571fec582d0100a478fb520eed059d11, type: 3}
+      objectReference: {fileID: 8300000, guid: b05cc43731499294b84ef9e9718e2a4c, type: 3}
     - target: {fileID: 4344415837845887925, guid: 8cae660f4ccc36f44a6388816b1bb337, type: 3}
       propertyPath: onCollectEffect
       value: 
@@ -1141,7 +1145,7 @@ PrefabInstance:
     - target: {fileID: 8985278966071670928, guid: 8cae660f4ccc36f44a6388816b1bb337, type: 3}
       propertyPath: collectSound
       value: 
-      objectReference: {fileID: 8300000, guid: 571fec582d0100a478fb520eed059d11, type: 3}
+      objectReference: {fileID: 8300000, guid: b05cc43731499294b84ef9e9718e2a4c, type: 3}
     - target: {fileID: 8985278966071670928, guid: 8cae660f4ccc36f44a6388816b1bb337, type: 3}
       propertyPath: onCollectEffect
       value: 

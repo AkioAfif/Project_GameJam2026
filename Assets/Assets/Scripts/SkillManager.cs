@@ -10,6 +10,8 @@ public class SkillManager : MonoBehaviour
     [Header("Skill A: Goal Visibility (X-Ray)")]
     public float goalVisibilityDuration = 8f;
     public GoalVisibilityEffect goalVisibilityEffect;
+    [Tooltip("SFX untuk efek Goal Visibility (X-Ray)")]
+    public AudioClip goalVisibilitySfx;
 
     [Header("Skill B: Time Freeze")]
     public float timeFreezeDuration = 5f;
@@ -28,6 +30,8 @@ public class SkillManager : MonoBehaviour
     [Header("Skill D: Wall Pass")]
     public float wallPassDuration = 3f;
     public WallPassEffect wallPassEffect;
+    [Tooltip("SFX untuk efek Wall Pass")]
+    public AudioClip wallPassSfx;
 
     private AudioSource sfxSource;
 
@@ -87,6 +91,8 @@ public class SkillManager : MonoBehaviour
                 if (goalVisibilityEffect != null)
                 {
                     goalVisibilityEffect.ActivateEffect(goalVisibilityDuration);
+                    if (goalVisibilitySfx != null && sfxSource != null)
+                        sfxSource.PlayOneShot(goalVisibilitySfx);
                     Debug.Log("Skill A Activated: Goal X-Ray Vision!");
                 }
                 else
@@ -104,6 +110,8 @@ public class SkillManager : MonoBehaviour
                 if (wallPassEffect != null)
                 {
                     wallPassEffect.ActivateEffect(wallPassDuration, transform);
+                    if (wallPassSfx != null && sfxSource != null)
+                        sfxSource.PlayOneShot(wallPassSfx);
                     Debug.Log("Skill D Activated: Wall Pass!");
                 }
                 else

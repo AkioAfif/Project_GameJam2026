@@ -797,6 +797,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   orientation: {fileID: 8055297271398554949}
+  footstepClip: {fileID: 8300000, guid: 714abe7fd1216fe42983dcabfef876dd, type: 3}
+  footstepInterval: 0.4
 --- !u!114 &8962255959568455043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -827,6 +829,7 @@ MonoBehaviour:
   gameTimer: {fileID: 119938773734558246}
   goalVisibilityDuration: 8
   goalVisibilityEffect: {fileID: 0}
+  goalVisibilitySfx: {fileID: 0}
   timeFreezeDuration: 5
   timeFreezeEffect: {fileID: 0}
   timeFreezeSfx: {fileID: 8300000, guid: 5df7aa19da65bf142853162ddbb1e2b8, type: 3}
@@ -835,6 +838,7 @@ MonoBehaviour:
   speedBoostSfx: {fileID: 8300000, guid: 30ad11877ed8ab5469ff5e4b2d05dc9f, type: 3}
   wallPassDuration: 1
   wallPassEffect: {fileID: 0}
+  wallPassSfx: {fileID: 0}
 --- !u!1 &7465500614917105930
 GameObject:
   m_ObjectHideFlags: 0
@@ -1070,6 +1074,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2843226659937184402}
     m_Modifications:
+    - target: {fileID: 696579769922988928, guid: 8cae660f4ccc36f44a6388816b1bb337, type: 3}
+      propertyPath: collectSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b05cc43731499294b84ef9e9718e2a4c, type: 3}
+    - target: {fileID: 696579769922988928, guid: 8cae660f4ccc36f44a6388816b1bb337, type: 3}
+      propertyPath: onCollectEffect
+      value: 
+      objectReference: {fileID: 110790, guid: 0f75f6db4a318f54382e0c98b2226db8, type: 3}
+    - target: {fileID: 1775364033160093806, guid: 8cae660f4ccc36f44a6388816b1bb337, type: 3}
+      propertyPath: collectSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b05cc43731499294b84ef9e9718e2a4c, type: 3}
+    - target: {fileID: 1775364033160093806, guid: 8cae660f4ccc36f44a6388816b1bb337, type: 3}
+      propertyPath: onCollectEffect
+      value: 
+      objectReference: {fileID: 120410, guid: 6636b3078b0905e489f698a11b7a6b6b, type: 3}
     - target: {fileID: 2290312668950584633, guid: 8cae660f4ccc36f44a6388816b1bb337, type: 3}
       propertyPath: m_Name
       value: Items
@@ -1114,6 +1134,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4344415837845887925, guid: 8cae660f4ccc36f44a6388816b1bb337, type: 3}
+      propertyPath: collectSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b05cc43731499294b84ef9e9718e2a4c, type: 3}
+    - target: {fileID: 4344415837845887925, guid: 8cae660f4ccc36f44a6388816b1bb337, type: 3}
+      propertyPath: onCollectEffect
+      value: 
+      objectReference: {fileID: 100748, guid: cd4d7020429cde74db076ffa72495419, type: 3}
+    - target: {fileID: 8985278966071670928, guid: 8cae660f4ccc36f44a6388816b1bb337, type: 3}
+      propertyPath: collectSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b05cc43731499294b84ef9e9718e2a4c, type: 3}
+    - target: {fileID: 8985278966071670928, guid: 8cae660f4ccc36f44a6388816b1bb337, type: 3}
+      propertyPath: onCollectEffect
+      value: 
+      objectReference: {fileID: 180128, guid: 575d0de1549937d4c93ab91a5a8d3c6f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

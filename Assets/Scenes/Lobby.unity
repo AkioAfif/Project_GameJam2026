@@ -1615,6 +1615,7 @@ MonoBehaviour:
   gameTimer: {fileID: 0}
   goalVisibilityDuration: 8
   goalVisibilityEffect: {fileID: 0}
+  goalVisibilitySfx: {fileID: 0}
   timeFreezeDuration: 5
   timeFreezeEffect: {fileID: 0}
   timeFreezeSfx: {fileID: 0}
@@ -1623,6 +1624,7 @@ MonoBehaviour:
   speedBoostSfx: {fileID: 0}
   wallPassDuration: 1
   wallPassEffect: {fileID: 0}
+  wallPassSfx: {fileID: 0}
 --- !u!114 &609431823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1660,6 +1662,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   orientation: {fileID: 1487786893}
+  footstepClip: {fileID: 8300000, guid: 714abe7fd1216fe42983dcabfef876dd, type: 3}
+  footstepInterval: 0.4
 --- !u!136 &609431825
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5077,7 +5081,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4998b2c9aa19c1e44bbf93e6425c37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TeleportPlate
-  nextSceneName: Lvl5
+  nextSceneName: Lvl1
   teleportDelay: 1
   teleportVfxPrefab: {fileID: 5945052716929817944, guid: 83042a092373d86429563194a6ea4856, type: 3}
   vfxSpawnPoint: {fileID: 6955985664455675562}

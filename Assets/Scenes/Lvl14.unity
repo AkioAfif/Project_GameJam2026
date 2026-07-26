@@ -1169,6 +1169,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AsetPenting
       objectReference: {fileID: 0}
+    - target: {fileID: 3846821948129034011, guid: 3b064aad5e26c6045b472adb8d786ea8, type: 3}
+      propertyPath: 'xrayTargets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1468931074}
     - target: {fileID: 3964274762075787442, guid: 3b064aad5e26c6045b472adb8d786ea8, type: 3}
       propertyPath: 'passableWalls.Array.data[0]'
       value: 
@@ -1212,6 +1216,14 @@ PrefabInstance:
     - target: {fileID: 5101763963998715566, guid: 3b064aad5e26c6045b472adb8d786ea8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6583524954758140567, guid: 3b064aad5e26c6045b472adb8d786ea8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6583524954758140567, guid: 3b064aad5e26c6045b472adb8d786ea8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
